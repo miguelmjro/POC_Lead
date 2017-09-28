@@ -29,9 +29,6 @@ public class Lead {
 	@Column(name = "lastname", nullable = true)
 	String lastname;
 
-	@Column(name = "name", nullable = true)
-	String name;
-
 	@Column(name = "firstname", nullable = true)
 	String firstname;
 	
@@ -84,14 +81,6 @@ public class Lead {
 
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getFirstname() {
