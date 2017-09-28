@@ -19,10 +19,12 @@ public class DemoIdGenerator implements IdentifierGenerator{
         String prefix = "DEMO";
         Connection connection = session.connection();
 
+        System.out.println("Generated Id start: " );
+
         try {
             Statement statement=connection.createStatement();
 
-            ResultSet rs=statement.executeQuery("select count(dse__demo_id__c) as Id from lead.Department");
+            ResultSet rs=statement.executeQuery("select count(dse__demo_id__c) as Id from salesforce.lead");
 
             if(rs.next())
             {

@@ -7,9 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Version;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 /**
  * Contact entity.
@@ -35,8 +35,6 @@ public class Lead {
 	@Column(name = "firstname", nullable = true)
 	String firstname;
 	
-	@GenericGenerator(name = "seq_dse_demo_id", strategy = "com.iheartmeadia.POC.generators.DemoIdGenerator")
-    @GeneratedValue(generator = "seq_dse_demo_id")
 	@Column(name = "dse__demo_id__c", unique = true, nullable = false)
 	String dse__demo_id__c;
 
