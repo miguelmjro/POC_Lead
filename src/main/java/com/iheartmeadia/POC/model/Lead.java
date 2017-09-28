@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  * Contact entity.
  */
@@ -21,43 +23,45 @@ public class Lead {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
     
-	@Column(name ="status", nullable = false)
+	@Column(name ="status", nullable = true)
 	String status;
 
-	@Column(name = "lastname", nullable = false)
+	@Column(name = "lastname", nullable = true)
 	String lastname;
 
-	@Column(name = "name", nullable = false)
+	@Column(name = "name", nullable = true)
 	String name;
 
-	@Column(name = "firstname", nullable = false)
+	@Column(name = "firstname", nullable = true)
 	String firstname;
-
-	@Column(name = "dse__demo_id__c", nullable = false)
+	
+	@GenericGenerator(name = "seq_dse_demo_id", strategy = "com.iheartmeadia.POC.generators.DemoIdGenerator")
+    @GeneratedValue(generator = "seq_dse_demo_id")
+	@Column(name = "dse__demo_id__c", unique = true, nullable = false)
 	String dse__demo_id__c;
 
-	@Column(name = "state", nullable = false)
+	@Column(name = "state", nullable = true)
 	String state;
 
-	@Column(name = "country", nullable = false)
+	@Column(name = "country", nullable = true)
 	String country;
 
-	@Column(name = "city", nullable = false)
+	@Column(name = "city", nullable = true)
 	String city;
 
-	@Column(name = "company", nullable = false)
+	@Column(name = "company", nullable = true)
 	String company;
 
-	@Column(name = "leadsource", nullable = false)
+	@Column(name = "leadsource", nullable = true)
 	String leadsource;
 
-	@Column(name = "street", nullable = false)
+	@Column(name = "street", nullable = true)
 	String street;
 
-	@Column(name = "postalcode", nullable = false)
+	@Column(name = "postalcode", nullable = true)
 	String postalcode;
 
-	@Column(name = "phone", nullable = false)
+	@Column(name = "phone", nullable = true)
 	String phone;
 
     public Integer getId() {
