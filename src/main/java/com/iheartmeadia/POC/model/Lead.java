@@ -13,7 +13,7 @@ import javax.persistence.Version;
  * Contact entity.
  */
 @Entity
-@Table(name = "dsb_contacto__c", schema = "salesforce")
+@Table(name = "lead", schema = "salesforce")
 
 public class Lead {
 	@Id
@@ -21,30 +21,44 @@ public class Lead {
     @Column(name = "id", unique = true, nullable = false)
     private Integer id;
     
-    @Version
-    @Column(name = "version__c", nullable = true)
-    private Integer version;
+	@Column(name ="status", nullable = false)
+	String status;
 
-    @Column(name = "firstname__c", nullable = false)    
-    private String firstName;
-    
-    @Column(name = "Lastname__c", nullable = false)
-    private String lastName;
-    
-    @Column(name = "email__c", nullable = false)
-    private String email;
-    
-    @Column(name = "mobilephone__c", nullable = false)
-    private String mobilePhone;
-    
-    @Column(name = "address__c", nullable = true)
-    private String address;
-    
-    @Column(name = "subject__c", nullable = false)
-    private String subject;
-    
-    @Column(name = "message__c", nullable = false)
-    private String message;
+	@Column(name = "lastname", nullable = false)
+	String lastname;
+
+	@Column(name = "name", nullable = false)
+	String name;
+
+	@Column(name = "firstname", nullable = false)
+	String firstname;
+
+	@Column(name = "dse__demo_id__c", nullable = false)
+	String dse__demo_id__c;
+
+	@Column(name = "state", nullable = false)
+	String state;
+
+	@Column(name = "country", nullable = false)
+	String country;
+
+	@Column(name = "city", nullable = false)
+	String city;
+
+	@Column(name = "company", nullable = false)
+	String company;
+
+	@Column(name = "leadsource", nullable = false)
+	String leadsource;
+
+	@Column(name = "street", nullable = false)
+	String street;
+
+	@Column(name = "postalcode", nullable = false)
+	String postalcode;
+
+	@Column(name = "phone", nullable = false)
+	String phone;
 
     public Integer getId() {
         return id;
@@ -53,68 +67,111 @@ public class Lead {
     public void setId(Integer id) {
         this.id = id;
     }
-    
-    public Integer getVersion() {
-        return version;
-    }
 
-    public void setVersion(Integer version) {
-        this.version = version;
-    }    
-    
-    public String getFirstName() {
-        return firstName;
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    
-    public String getLastName() {
-        return lastName;
-    }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-    
-    public String getEmail() {
-        return email;
-    }
+	public String getLastname() {
+		return lastname;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    
-    public String getMobilePhone() {
-        return mobilePhone;
-    }
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
 
-    public void setMobilePhone(String mobilePhone) {
-        this.mobilePhone = mobilePhone;
-    }
-    
-    public String getAddress() {
-        return address;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-    
-    public String getSubject() {
-        return subject;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-    
-    public String getMessage() {
-        return message;
-    }
+	public String getFirstname() {
+		return firstname;
+	}
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getDse__demo_id__c() {
+		return dse__demo_id__c;
+	}
+
+	public void setDse__demo_id__c(String dse__demo_id__c) {
+		this.dse__demo_id__c = dse__demo_id__c;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public String getLeadsource() {
+		return leadsource;
+	}
+
+	public void setLeadsource(String leadsource) {
+		this.leadsource = leadsource;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getPostalcode() {
+		return postalcode;
+	}
+
+	public void setPostalcode(String postalcode) {
+		this.postalcode = postalcode;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+    
+    
+    
 }
