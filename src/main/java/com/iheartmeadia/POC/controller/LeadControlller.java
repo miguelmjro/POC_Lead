@@ -1,5 +1,8 @@
 package com.iheartmeadia.POC.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,25 +32,47 @@ public class LeadControlller {
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<Lead> leadModel() {
-    	Lead lead = new Lead();
-    	lead.setId(0);
-    	lead.setStatus("Text");
-    	lead.setLastname("Text");
-    	lead.setFirstname("Text");
-    	lead.setDse__demo_id__c("Text");
-    	lead.setState("Text");
-    	lead.setCountry("Text");
-    	lead.setCity("Text");
-    	lead.setCompany("Text");
-    	lead.setLeadsource("Text");
-    	lead.setStreet("Text");
-    	lead.setPostalcode("Text");
-    	lead.setPhone("Text");
+    	Lead lead = createSampleLead(0,"");
         return new ResponseEntity<Lead>(lead,HttpStatus.OK);
     }
+    
+    @RequestMapping(value = "/ListStructure", method = RequestMethod.GET)
+    public ResponseEntity<List<Lead>> leadListModel() {
+    	List<Lead> lstLead = new ArrayList<Lead>();
+    	for(int id=0;id<5;id++) {
+    		Lead lead = createSampleLead(id,""+id);
+    		lstLead.add(lead);
+    	}
+        return new ResponseEntity<List<Lead>>(lstLead,HttpStatus.OK);
+    }
     @RequestMapping(value = "/lead", method = RequestMethod.POST)
-    public ResponseEntity<Lead> saveContact(@RequestBody Lead lead) {
+    public ResponseEntity<Lead> saveLead(@RequestBody Lead lead) {
     	leadRepository.save(lead);
         return new ResponseEntity<Lead>(lead,HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/leads", method = RequestMethod.POST)
+    public ResponseEntity<List<Lead>> saveLeads(@RequestBody List<Lead> leads) {
+    	leadRepository.save(leads);
+        return new ResponseEntity<List<Lead>>(leads,HttpStatus.OK);
+    }
+    
+    private Lead createSampleLead(int id, String sufix) {
+    	Lead lead = new Lead();
+    	lead.setId(id);
+    	String text="Text"+sufix;
+    	lead.setStatus(text);
+    	lead.setLastname(text);
+    	lead.setFirstname(text);
+    	lead.setDse__demo_id__c(text);
+    	lead.setState(text);
+    	lead.setCountry(text);
+    	lead.setCity(text);
+    	lead.setCompany(text);
+    	lead.setLeadsource(text);
+    	lead.setStreet(text);
+    	lead.setPostalcode(text);
+    	lead.setPhone(text);
+    	return lead;
     }
 }
