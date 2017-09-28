@@ -33,7 +33,6 @@ public class LeadControlller {
     	lead.setId(0);
     	lead.setStatus("Text");
     	lead.setLastname("Text");
-    	lead.setName("Text");
     	lead.setFirstname("Text");
     	lead.setDse__demo_id__c("Text");
     	lead.setState("Text");
