@@ -32,14 +32,14 @@ public class LeadControlller {
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<Lead> leadModel() {
-    	Lead lead = createSampleLead(0,"");
+    	Lead lead = createSampleLead(0L,"");
         return new ResponseEntity<Lead>(lead,HttpStatus.OK);
     }
     
     @RequestMapping(value = "/ListStructure", method = RequestMethod.GET)
     public ResponseEntity<List<Lead>> leadListModel() {
     	List<Lead> lstLead = new ArrayList<Lead>();
-    	for(int id=0;id<5;id++) {
+    	for(long id=0;id<5;id++) {
     		Lead lead = createSampleLead(id,""+id);
     		lstLead.add(lead);
     	}
@@ -57,7 +57,7 @@ public class LeadControlller {
         return new ResponseEntity<List<Lead>>(leads,HttpStatus.OK);
     }
     
-    private Lead createSampleLead(int id, String sufix) {
+    private Lead createSampleLead(Long id, String sufix) {
     	Lead lead = new Lead();
     	lead.setId(id);
     	String text="Text"+sufix;
@@ -66,7 +66,6 @@ public class LeadControlller {
     	lead.setFirstname(text);
     	lead.setDse__demo_id__c(text);
     	lead.setState(text);
-    	lead.setCountry(text);
     	lead.setCity(text);
     	lead.setCompany(text);
     	lead.setLeadsource(text);

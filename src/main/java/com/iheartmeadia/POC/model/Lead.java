@@ -7,9 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
+import javax.persistence.TableGenerator;
 
 /**
  * Contact entity.
@@ -19,9 +17,10 @@ import org.hibernate.annotations.Parameter;
 
 public class Lead {
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@TableGenerator(name = "Idpk_gen", table = "ID_GEN", pkColumnName = "GEN_NAME", valueColumnName = "GEN_VAL", pkColumnValue = "id_Gen", initialValue = 10000, allocationSize = 100)
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = "Idpk_gen")
     @Column(name = "id", unique = true, nullable = false)
-    private Integer id;
+    private Long id;
     
 	@Column(name ="status", nullable = true)
 	String status;
@@ -37,9 +36,6 @@ public class Lead {
 
 	@Column(name = "state", nullable = true)
 	String state;
-
-	@Column(name = "country", nullable = true)
-	String country;
 
 	@Column(name = "city", nullable = true)
 	String city;
@@ -59,11 +55,11 @@ public class Lead {
 	@Column(name = "phone", nullable = true)
 	String phone;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -105,14 +101,6 @@ public class Lead {
 
 	public void setState(String state) {
 		this.state = state;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
 	}
 
 	public String getCity() {
