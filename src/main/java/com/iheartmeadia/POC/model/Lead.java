@@ -6,8 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 /**
  * Contact entity.
@@ -17,8 +17,8 @@ import javax.persistence.TableGenerator;
 
 public class Lead {
 	@Id
-	@TableGenerator(name = "Idpk_gen", table = "ID_GEN", pkColumnName = "GEN_NAME", valueColumnName = "GEN_VAL", pkColumnValue = "id_Gen", initialValue = 10000, allocationSize = 100)
-	@GeneratedValue(strategy = GenerationType.TABLE, generator = "Idpk_gen")
+	@SequenceGenerator(name = "lead_id_seq", sequenceName = "lead_id_seq", schema = "salesforce", allocationSize = 1)  
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "lead_id_seq")
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
     
