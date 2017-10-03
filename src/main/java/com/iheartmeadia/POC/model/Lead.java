@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 public class Lead {
 	@Id
-	@SequenceGenerator(name = "lead_id_seq", sequenceName = "lead_id_seq", schema = "salesforce", allocationSize = 1)  
+	@SequenceGenerator(name = "lead_id_seq", sequenceName = "lead_id_seq2", allocationSize = 1)  
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "lead_id_seq")
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
