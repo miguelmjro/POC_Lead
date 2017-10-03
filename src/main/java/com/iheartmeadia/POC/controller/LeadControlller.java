@@ -32,7 +32,7 @@ public class LeadControlller {
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<Lead> leadModel() {
-    	Lead lead = createSampleLead(0L,"");
+    	Lead lead = createSampleLead("");
         return new ResponseEntity<Lead>(lead,HttpStatus.OK);
     }
     
@@ -40,7 +40,7 @@ public class LeadControlller {
     public ResponseEntity<List<Lead>> leadListModel() {
     	List<Lead> lstLead = new ArrayList<Lead>();
     	for(long id=0;id<5;id++) {
-    		Lead lead = createSampleLead(id,""+id);
+    		Lead lead = createSampleLead(""+id);
     		lstLead.add(lead);
     	}
         return new ResponseEntity<List<Lead>>(lstLead,HttpStatus.OK);
