@@ -57,16 +57,16 @@ public class LeadControlller {
         return new ResponseEntity<List<Lead>>(leads,HttpStatus.OK);
     }
     
-    private Lead createSampleLead(Long id, String sufix) {
+    private Lead createSampleLead(String sufix) {
     	Lead lead = new Lead();
-    	lead.setId(id);
+    	lead.setId(null);
     	String text="Text"+sufix;
     	lead.setStatus(text);
     	lead.setLastname(text);
     	lead.setFirstname(text);
     	lead.setDse__demo_id__c(text);
-    	lead.setState(text);
-    	lead.setCity(text);
+    	lead.setState("TX");
+    	lead.setCity("San Antonio");
     	lead.setCompany(text);
     	lead.setLeadsource(text);
     	lead.setStreet(text);
