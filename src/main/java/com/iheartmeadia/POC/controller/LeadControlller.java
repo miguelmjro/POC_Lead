@@ -2,6 +2,7 @@ package com.iheartmeadia.POC.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -61,10 +62,11 @@ public class LeadControlller {
     	Lead lead = new Lead();
     	lead.setId(null);
     	String text="Text"+sufix;
-    	lead.setStatus(text);
+    	lead.setStatus("Open");
     	lead.setLastname(text);
     	lead.setFirstname(text);
-    	lead.setDse__demo_id__c(text);
+    	lead.setDse__demo_id__c(UUID.randomUUID().toString().replace("-", ""));
+    	lead.setCountry("United States");
     	lead.setState("TX");
     	lead.setCity("San Antonio");
     	lead.setCompany(text);

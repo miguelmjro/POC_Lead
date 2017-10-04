@@ -34,6 +34,9 @@ public class Lead {
 	@Column(name = "dse__demo_id__c", unique = true, nullable = false)
 	String dse__demo_id__c;
 
+	@Column(name = "country", nullable = true)
+	String country;
+
 	@Column(name = "state", nullable = true)
 	String state;
 
@@ -150,7 +153,13 @@ public class Lead {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-    
-    
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
     
 }
