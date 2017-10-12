@@ -63,7 +63,7 @@
 				<artifactId>appassembler-maven-plugin</artifactId>
 				<version>1.1.1</version>
 				<configuration>
-					<assembleDirectory>target</assembleDirectory>
+					<assembleDirectory>target/target</assembleDirectory>
 					<programs>
 						<program>
 							<mainClass>com.iheartmeadia.POC.OneOffProcess</mainClass>
