@@ -66,7 +66,7 @@
 					<assembleDirectory>target</assembleDirectory>
 					<programs>
 						<program>
-							<mainClass>OneOffProcess</mainClass>
+							<mainClass>com.OneOffProcess</mainClass>
 							<name>oneoff</name>
 						</program>
 					</programs>
