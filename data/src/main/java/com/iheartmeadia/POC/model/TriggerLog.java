@@ -61,11 +61,11 @@ public class TriggerLog implements Serializable
     private Date       createdAt    ;
 
 
-    @Column(name="sf_message", length=2147483647)
+    @Column(name="sf_message", length=10485760)
     private String     sfMessage    ;
 
 
-    @Column(name="values", length=2147483647)
+    @Column(name="values", length=10485760)
     private String     values       ;
 
 
@@ -102,7 +102,7 @@ public class TriggerLog implements Serializable
     private Long       processedTx  ;
 
 
-    @Column(name="old", length=2147483647)
+    @Column(name="old", length=10485760)
     private String     old          ;
 
 

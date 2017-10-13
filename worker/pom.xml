@@ -47,7 +47,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>com.heroku.devcenter.BigOperationWorker</mainClass>
+                            <mainClass>com.iheartmeadia.POC.OneOffProcess</mainClass>
                             <name>worker</name>
                         </program>
                     </programs>
