@@ -51,13 +51,13 @@
 		</dependency>
 
 	</dependencies>
-<!-- 
+ 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.springframework.boot</groupId> -->
+<!-- 				<artifactId>spring-boot-maven-plugin</artifactId> -->
+<!-- 			</plugin> -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>appassembler-maven-plugin</artifactId>
@@ -81,7 +81,7 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>-->
+	</build>
 
 
 
