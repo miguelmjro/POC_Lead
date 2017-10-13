@@ -66,8 +66,8 @@
 					<assembleDirectory>target</assembleDirectory>
 					<programs>
 						<program>
-							<mainClass>com.example.OneOffProcess</mainClass>
-							<name>oneoff</name>
+							<mainClass>com.iheartmeadia.POC.OneOffProcess</mainClass>
+							<name>worker</name>
 						</program>
 					</programs>
 				</configuration>
@@ -82,6 +82,8 @@
 			</plugin>
 		</plugins>
 	</build>-->
+
+
 
 
 </project>
