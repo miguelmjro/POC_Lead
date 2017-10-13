@@ -1,0 +1,8 @@
+com\iheartmeadia\POC\respositories\TriggerLogRepository.class
+com\iheartmeadia\POC\respositories\LeadRepository.class
+com\iheartmeadia\POC\respositories\OpportunityRepository.class
+com\iheartmeadia\POC\model\SimpleRecord.class
+com\iheartmeadia\POC\model\Lead.class
+com\iheartmeadia\POC\model\Opportunity.class
+com\iheartmeadia\POC\model\ResponseMessage.class
+com\iheartmeadia\POC\model\TriggerLog.class

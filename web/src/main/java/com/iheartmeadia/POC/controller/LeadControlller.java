@@ -19,6 +19,7 @@ import com.iheartmeadia.POC.respositories.LeadRepository;
 @RestController
 public class LeadControlller {
 	
+	@Autowired
 	private LeadRepository leadRepository;
 	
 	@Autowired

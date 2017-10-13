@@ -10,8 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.iheartmeadia.POC.model.json.Quote;
 
-public class OneOffProcess
-{
+public class OneOffProcess{
 	private static final Logger log = LoggerFactory.getLogger(OneOffProcess.class);
     public static void main(String[] args){
     	ObjectMapper obj = new ObjectMapper();

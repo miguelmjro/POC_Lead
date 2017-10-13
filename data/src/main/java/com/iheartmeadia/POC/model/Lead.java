@@ -9,12 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Contact entity.
  */
 @Entity
 @Table(name = "lead", schema = "salesforce")
-
+@Component 
 public class Lead {
 	@Id
 	@SequenceGenerator(name = "lead_id_seq", sequenceName = "lead_id_seq", allocationSize = 1)  
