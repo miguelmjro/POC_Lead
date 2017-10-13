@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-<!-- 	<groupId>com.example</groupId> -->
-<!-- 	<artifactId>POC_Lead</artifactId> -->
-<!-- 	<version>0.0.1-SNAPSHOT</version> -->
-<!-- 	<packaging>jar</packaging> -->
+	<groupId>com.example</groupId>
+	<artifactId>POC_Lead</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 	<name>POC_Lead-1</name>
 	<description>Demo project for Spring Boot</description>
@@ -59,16 +59,14 @@
 <!-- 				<artifactId>spring-boot-maven-plugin</artifactId> -->
 <!-- 			</plugin> -->
 			<plugin>
-				<groupId>com.example</groupId>
-				<artifactId>POC_Lead</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
-					<assembleDirectory>target</assembleDirectory>
-					<programs>
-						<program>
+					<archive>
+						<manifest>
 							<mainClass>com.iheartmeadia.POC.PocLeadApplication</mainClass>
-						</program>
-					</programs>
+						</manifest>
+					</archive>
 				</configuration>
 			</plugin>
 			<plugin>
