@@ -49,9 +49,16 @@
                     <programs>
                         <program>
                             <mainClass>com.iheartmeadia.POC.OneOffProcess</mainClass>
-                            <name>worker</name>
+							<name>worker</name>
                         </program>
                     </programs>
+				      <archive>
+				        <manifest>
+				          <addClasspath>true</addClasspath>
+				          <mainClass>com.iheartmeadia.POC.OneOffProcess</mainClass>
+                            <packageName>com.iheartmeadia.POC</packageName>
+				        </manifest>
+				      </archive>
                 </configuration>
                 <executions>
                     <execution>
