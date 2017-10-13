@@ -55,9 +55,11 @@
                 </configuration>
                 <executions>
                     <execution>
+      					<id>assemble</id>
                         <goals>
                             <goal>assemble</goal>
                         </goals>
+      					<phase>package</phase>	
                     </execution>
                 </executions>
             </plugin>
