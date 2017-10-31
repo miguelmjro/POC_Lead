@@ -1,5 +1,7 @@
 package com.iheartmeadia.POC.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Type;
 
 /**
  * Contact entity.
@@ -28,7 +32,8 @@ public class Opportunity {
 	private String name;
 	
 	@Column(name ="closedate", nullable = true)
-	private String closedate;
+	@Type(type="date")
+	private Date closedate;
 	
 	@Column(name ="agency_or_direct__c", nullable = true)
 	private String agency_or_direct__c;
@@ -38,6 +43,12 @@ public class Opportunity {
 	
 	@Column(name ="accountid", nullable = true)
 	private String accountid;
+	
+	@Column(name ="gross_amount_fulfilled_scheduled__c", nullable = true)
+	private double gross_amount_fulfilled_scheduled__c;
+	
+	@Column(name ="gross_amount_fulfilled__c", nullable = true)
+	private double gross_amount_fulfilled__c;
 
 	public Long getId() {
 		return id;
@@ -63,11 +74,11 @@ public class Opportunity {
 		this.name = name;
 	}
 
-	public String getClosedate() {
+	public Date getClosedate() {
 		return closedate;
 	}
 
-	public void setClosedate(String closedate) {
+	public void setClosedate(Date closedate) {
 		this.closedate = closedate;
 	}
 
@@ -94,5 +105,22 @@ public class Opportunity {
 	public void setAccountid(String accountid) {
 		this.accountid = accountid;
 	}
-		
+
+	public double getGross_amount_fulfilled_scheduled__c() {
+		return gross_amount_fulfilled_scheduled__c;
+	}
+
+	public void setGross_amount_fulfilled_scheduled__c(double gross_amount_fulfilled_scheduled__c) {
+		this.gross_amount_fulfilled_scheduled__c = gross_amount_fulfilled_scheduled__c;
+	}
+
+	public double getGross_amount_fulfilled__c() {
+		return gross_amount_fulfilled__c;
+	}
+
+	public void setGross_amount_fulfilled__c(double gross_amount_fulfilled__c) {
+		this.gross_amount_fulfilled__c = gross_amount_fulfilled__c;
+	}
+	
+	
 }

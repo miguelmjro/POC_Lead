@@ -1,4 +1,4 @@
-package com.iheartmeadia.POC.model.json;
+package com.iheartmeadia.POC.json;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
