@@ -53,6 +53,17 @@
 	        <plugin>
 		      <groupId>org.springframework.boot</groupId>
 		      <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <addClasspath>true</addClasspath>
+                        <mainClass>com.iheartmedia.POC.OneOffProcess</mainClass>
+                    </manifest>
+                </archive>
+                <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+            </configuration>
 		      <executions>
 		        <execution>
 		          <goals>
