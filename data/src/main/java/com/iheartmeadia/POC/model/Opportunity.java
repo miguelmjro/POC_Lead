@@ -49,6 +49,10 @@ public class Opportunity {
 	
 	@Column(name ="gross_amount_fulfilled__c", nullable = true)
 	private double gross_amount_fulfilled__c;
+	
+
+	@Column(name ="synced_proposal__c", nullable = true)
+	private String synced_proposal__c;
 
 	public Long getId() {
 		return id;
@@ -120,6 +124,14 @@ public class Opportunity {
 
 	public void setGross_amount_fulfilled__c(double gross_amount_fulfilled__c) {
 		this.gross_amount_fulfilled__c = gross_amount_fulfilled__c;
+	}
+
+	public String getSynced_proposal__c() {
+		return synced_proposal__c;
+	}
+
+	public void setSynced_proposal__c(String synced_proposal__c) {
+		this.synced_proposal__c = synced_proposal__c;
 	}
 	
 	

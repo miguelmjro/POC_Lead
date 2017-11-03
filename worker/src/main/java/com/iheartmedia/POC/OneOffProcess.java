@@ -1,40 +1,37 @@
 package com.iheartmedia.POC;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.iheartmeadia.POC.model.Actual;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.iheartmeadia.POC.Consumer.ActualConsumer;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages={"com.iheartmeadia.POC.*"})
 @EnableAutoConfiguration
-@EntityScan(basePackages={"com.iheartmeadia.POC.model"})
+@EntityScan(basePackages={"com.iheartmeadia.POC"})
 public class OneOffProcess{
+	@Autowired
+	ActualConsumer actualConsumer;
 	private static final Logger log = LoggerFactory.getLogger(OneOffProcess.class);
-    public static void main(String[] args){
-    	ObjectMapper obj = new ObjectMapper();
-    	
-    	RestTemplate restTemplate = new RestTemplate();
-        String response = restTemplate.getForObject("http://localhost:8080/getActuals", String.class);
-        log.info(response);
-        if(response!=null&&!response.isEmpty()) {
-        	try {
-        		List<Actual> quote = obj.readValue(response, new TypeReference<List<Actual>>() {});
-				log.info(quote.toString());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-        }
-    }    
+    public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException{
+    	final ApplicationContext context =
+                new ClassPathXmlApplicationContext("springDataConfig.xml");
+    	OneOffProcess process = (OneOffProcess) context.getBean("OneOffProcess");
+    	process.doJob();
+    }
+    
+    public void doJob() throws JsonParseException, JsonMappingException, IOException {
+    	actualConsumer.consumeActuals();
+    }
 }

@@ -32,8 +32,8 @@ public class Actual {
 	//@Type(type="double precision")
 	private double gross_amount_fulfilled;
 
-	@Column(name ="mactched", nullable = true)
-	private boolean mactched = false;
+	@Column(name ="matched", nullable = true)
+	private boolean matched = false;
 	
 	public Long getActualId() {
 		return actualId;
@@ -70,13 +70,13 @@ public class Actual {
 		this.gross_amount_fulfilled = gross_amount_fulfilled;
 	}
 
-	public boolean isMactched() {
-		return mactched;
+	public boolean isMatched() {
+		return matched;
 	}
 	
 	@JsonProperty("Mactched")
-	public void setMactched(boolean mactched) {
-		this.mactched = mactched;
+	public void setMatched(boolean mactched) {
+		this.matched = mactched;
 	}
     @Override
     public String toString() {
@@ -85,7 +85,7 @@ public class Actual {
                 ", id=" + id +
                 ", total_Gross_Fulfilled_Scheduled='" + total_Gross_Fulfilled_Scheduled +
                 ", gross_amount_fulfilled=" + gross_amount_fulfilled +
-                ", mactched=" + mactched +
+                ", matched=" + matched +
                 '}';
     }
 
