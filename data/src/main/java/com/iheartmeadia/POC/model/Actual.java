@@ -74,7 +74,7 @@ public class Actual {
 		return matched;
 	}
 	
-	@JsonProperty("Mactched")
+	@JsonProperty("Matched")
 	public void setMatched(boolean mactched) {
 		this.matched = mactched;
 	}

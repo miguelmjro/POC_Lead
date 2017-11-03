@@ -38,6 +38,7 @@ public class ActualConsumer {
     	ObjectMapper obj = new ObjectMapper();
 
     	RestTemplate restTemplate = new RestTemplate();
+    	//String response = restTemplate.getForObject("https://iheart-poc.herokuapp.com/getActuals", String.class);
         String response = restTemplate.getForObject("https://ra4egm67j2.execute-api.us-east-1.amazonaws.com/ci/viero/getActuals", String.class);
         log.info(response);
         if(response!=null&&!response.isEmpty()) {

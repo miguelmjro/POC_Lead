@@ -13,7 +13,7 @@ import com.iheartmeadia.POC.model.Opportunity;
 
 @Component 
 public interface ActualRepository extends CrudRepository< Actual, Integer>{
-	@Query("SELECT op FROM Opportunity op where op.synced_proposal__c IN :ids")
-	List<Actual> findByNoMatched(@Param("ids")Set<String> proposals);	
+	@Query("SELECT act FROM Actual act where act.matched=false")
+	List<Actual> findByNoMatched();	
 
 }
