@@ -53,7 +53,10 @@ public class Opportunity {
 
 	@Column(name ="synced_proposal__c", nullable = true)
 	private String synced_proposal__c;
-
+	
+	@Column(name ="_hc_err", nullable = true)
+	private String erroMessage;
+	
 	public Long getId() {
 		return id;
 	}
@@ -132,6 +135,14 @@ public class Opportunity {
 
 	public void setSynced_proposal__c(String synced_proposal__c) {
 		this.synced_proposal__c = synced_proposal__c;
+	}
+
+	public String getErroMessage() {
+		return erroMessage;
+	}
+
+	public void setErroMessage(String erroMessage) {
+		this.erroMessage = erroMessage;
 	}
 	
 	
