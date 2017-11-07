@@ -1,6 +1,7 @@
 package com.iheartmedia.POC;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,15 +29,7 @@ public class OneOffProcess{
     	final ApplicationContext context =
                 new ClassPathXmlApplicationContext("springDataConfig.xml");
     	OneOffProcess process = (OneOffProcess) context.getBean("OneOffProcess");
-    	while(true) {
-	    	process.doJob();
-	    	try {
-				Thread.sleep(600000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-    	}
+    	process.doJob();
     }
     
     public void doJob()  {
