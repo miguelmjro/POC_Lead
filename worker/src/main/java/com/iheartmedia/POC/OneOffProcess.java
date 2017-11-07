@@ -24,14 +24,22 @@ public class OneOffProcess{
 	@Autowired
 	ActualConsumer actualConsumer;
 	private static final Logger log = LoggerFactory.getLogger(OneOffProcess.class);
-    public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException{
+    public static void main(String[] args) {
     	final ApplicationContext context =
                 new ClassPathXmlApplicationContext("springDataConfig.xml");
     	OneOffProcess process = (OneOffProcess) context.getBean("OneOffProcess");
-    	process.doJob();
+    	while(true) {
+	    	process.doJob();
+	    	try {
+				Thread.sleep(600000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	}
     }
     
-    public void doJob() throws JsonParseException, JsonMappingException, IOException {
+    public void doJob()  {
     	actualConsumer.consumeActuals();
     }
 }
