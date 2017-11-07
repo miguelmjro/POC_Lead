@@ -45,10 +45,10 @@ public class Opportunity {
 	private String accountid;
 	
 	@Column(name ="gross_amount_fulfilled_scheduled__c", nullable = true)
-	private double gross_amount_fulfilled_scheduled__c;
+	private Double gross_amount_fulfilled_scheduled__c;
 	
 	@Column(name ="gross_amount_fulfilled__c", nullable = true)
-	private double gross_amount_fulfilled__c;
+	private Double gross_amount_fulfilled__c;
 	
 
 	@Column(name ="synced_proposal__c", nullable = true)
@@ -113,7 +113,7 @@ public class Opportunity {
 		this.accountid = accountid;
 	}
 
-	public double getGross_amount_fulfilled_scheduled__c() {
+	public Double getGross_amount_fulfilled_scheduled__c() {
 		return gross_amount_fulfilled_scheduled__c;
 	}
 
@@ -121,7 +121,7 @@ public class Opportunity {
 		this.gross_amount_fulfilled_scheduled__c = gross_amount_fulfilled_scheduled__c;
 	}
 
-	public double getGross_amount_fulfilled__c() {
+	public Double getGross_amount_fulfilled__c() {
 		return gross_amount_fulfilled__c;
 	}
 

@@ -26,11 +26,11 @@ public class Actual {
 	
 	@Column(name ="Total_Gross_Fulfilled_Scheduled", nullable = true)
 	//@Type(type="double precision")
-	private double total_Gross_Fulfilled_Scheduled;
+	private Double total_Gross_Fulfilled_Scheduled;
 	
 	@Column(name ="Gross_Amount_Fulfilled", nullable = true)
 	//@Type(type="double precision")
-	private double gross_amount_fulfilled;
+	private Double gross_amount_fulfilled;
 
 	@Column(name ="matched", nullable = true)
 	private boolean matched = false;
@@ -52,7 +52,7 @@ public class Actual {
 		this.id = id;
 	}
 
-	public double getTotal_Gross_Fulfilled_Scheduled() {
+	public Double getTotal_Gross_Fulfilled_Scheduled() {
 		return total_Gross_Fulfilled_Scheduled;
 	}
 
@@ -61,7 +61,7 @@ public class Actual {
 		this.total_Gross_Fulfilled_Scheduled = total_Gross_Fulfilled_Scheduled;
 	}
 
-	public double getGross_amount_fulfilled() {
+	public Double getGross_amount_fulfilled() {
 		return gross_amount_fulfilled;
 	}
 
