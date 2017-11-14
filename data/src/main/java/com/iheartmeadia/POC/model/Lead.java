@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  * Contact entity.
  */
 @Entity
-@Table(name = "lead", schema = "salesforce")
+@Table(name = "lead", schema = "salesforcepoc")
 @Component 
 public class Lead {
 	@Id

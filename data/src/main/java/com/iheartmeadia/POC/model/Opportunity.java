@@ -16,7 +16,7 @@ import org.hibernate.annotations.Type;
  * Contact entity.
  */
 @Entity
-@Table(name = "opportunity", schema = "salesforce")
+@Table(name = "opportunity", schema = "salesforcepoc")
 
 public class Opportunity {
 	@Id

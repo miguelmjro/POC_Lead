@@ -25,7 +25,7 @@ import javax.persistence.TemporalType;
  */
 
 @Entity
-@Table(name="_trigger_log", schema="salesforce" )
+@Table(name="_trigger_log", schema="salesforcepoc" )
 // Define named queries here
 @NamedQueries ( {
   @NamedQuery ( name="TriggerLog.countAll", query="SELECT COUNT(x) FROM TriggerLog x" )
